@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+/* import * as x from "./data" */
+import { users, nameofAdmin } from "./data";
+import ListOfUsers from "./Components/ListOfUsers";
+import image from "./image";
 
 function App() {
+  const handleName = (user) => {
+    alert(user.name);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ListOfUsers
+        users={users}
+        nameofAdmin={nameofAdmin}
+        handleName={handleName}
+      >
+        <div style={{ backgroundColor: "red" }}>
+          <h1>hello</h1>
+          <input />
+        </div>
+      </ListOfUsers>
     </div>
   );
 }
